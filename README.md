@@ -36,14 +36,14 @@ This is an experimental code editor for STM32 Blue Pill - try it at https://lupy
        npm install
        cd ..
 
-1. Install the PXT command line
-
-       cd pxt-maker
-       npm install -g pxt
-
 1. Install the pxt-maker dependencies.
 
+       cd pxt-maker
        npm install
+
+1. Install the PXT command line
+
+       npm install -g pxt
 
 1. Link pxt-maker back to base pxt repo
 
