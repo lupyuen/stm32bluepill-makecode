@@ -62,7 +62,7 @@ Note the above command assumes the folder structure of
 
 ### Running
 
-Run this command from inside pxt-maker to open a local web server
+Run this command from inside `pxt-maker` to open a local web server
 ```
 pxt serve --localbuild 
 ```
@@ -76,7 +76,7 @@ pxt serve --localbuild --no-browser
 
 ### Running on Windows Ubuntu Bash
 
-Because Docker is not supported on Windows Ubuntu, we will install a dummy `docker` command to intervene manually during the build...
+Because Docker is not supported on Windows Ubuntu, we will install a dummy `docker` command to intervene manually during the build. Run these commands inside `pxt-maker`:
 
 ```bash
 chmod +x scripts/docker
