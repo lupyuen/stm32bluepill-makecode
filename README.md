@@ -91,12 +91,16 @@ building libs/core
 building libs/core---stm32bluepill
 building libs/stm32bluepill
 [run] cd built/dockercodal; docker run --rm -v /mnt/c/maker.makecode.com/pxt-maker/libs/stm32bluepill/built/dockercodal/:/src -w /src -u build pext/yotta:latest python build.py
-***** Paused in dummy docker script. Press Enter to continue build...
+***** Paused in dummy docker script. Open another window and enter:
+cd /mnt/c/stm32bluepill-makecode/pxt-maker/libs/stm32bluepill/built/dockercodal
+export VERBOSE=1
+python build.py
+***** Press Enter to continue build...
 ```
 
-Look for the folder name before `:/src`. In a new shell, manually `cd` to the folder and continue the build in that folder like this:
+Open a new shell and enter the commands shown:
 ```bash
-cd /mnt/c/maker.makecode.com/pxt-maker/libs/stm32bluepill/built/dockercodal/
+cd /mnt/c/stm32bluepill-makecode/pxt-maker/libs/stm32bluepill/built/dockercodal
 export VERBOSE=1
 python build.py
 ```
