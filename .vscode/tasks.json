@@ -114,7 +114,18 @@
             "problemMatcher": []
         },
         {
-            "label": "pxt serve (no browser)",
+            "label": "5️⃣ pxt-maker link",
+            "type": "shell",
+            "command": "scripts/install-pxt.sh",
+            "options": {
+                "cwd": "${workspaceFolder}/pxt-maker"
+            },
+            "problemMatcher": [
+            ],
+            "group": "build"
+        },
+        {
+            "label": "6️⃣ pxt serve (no browser)",
             "type": "shell",
             "command": "pxt serve --localbuild --no-browser",
             "options": {
@@ -127,6 +138,22 @@
                 "kind": "build",
                 "isDefault": true
             },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "7️⃣ pxt build demo (blink)",
+            "type": "shell",
+            "command": "./build.sh",
+            "options": {
+                "cwd": "${workspaceFolder}/pxt-maker/projects/blink"
+            },
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "group": "build",
             "presentation": {
                 "reveal": "always",
                 "panel": "dedicated"
