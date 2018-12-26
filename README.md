@@ -106,6 +106,18 @@ pxt-maker/libs/stm32bluepill/built/dockercodal
 pxt-maker/libs/blocksprj/built/dockercodal
 ```
 
+### Building the Blink sample
+
+In the `pxt-maker` folder enter these commands:
+
+```
+cd projects/blink
+./build.sh
+cd ../..
+```
+
+This creates a ROM file `projects/blink/built/flash.bin` that contains the ROM image of the Blink executable.  You may flash the Blue Pill to run it, or run it with the `qemu_stm32` emulator.
+
 ### Updates
 
 Make sure to pull changes from all repos regularly. More instructions are at https://github.com/Microsoft/pxt#running-a-target-from-localhost
