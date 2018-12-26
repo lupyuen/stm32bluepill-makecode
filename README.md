@@ -114,22 +114,13 @@ Entering directory `/mnt/c/maker.makecode.com/pxt-maker/libs/stm32bluepill/built
 
 Return to the `pxt-maker` shell and press Enter.  It will continue the build.
 
-When the build pauses in a different folder like `libs/blocksprj/built/dockercodal`, repeat the above steps.
+When the build pauses in a different folder like `libs/blocksprj/built/dockercodal`, repeat the above steps to run `python build.py` in the paused folder.
 
 Here are the folders that require manual building:
 
 ```
-libs/stm32bluepill/built/dockercodal
-libs/blocksprj/built/dockercodal
-```
-
-TODO: Fix this build error:
-```
-[run] cd sim; node ../node_modules/typescript/bin/tsc
-dalboard.ts(183,78): error TS2345: Argument of type '{ visual: string | BoardImageDefinition; }' is not assignable to parameter of type 'BoardViewOptions'.
-  Property 'boardDef' is missing in type '{ visual: string | BoardImageDefinition; }'.
-visuals/boardview.ts(3,42): error TS2345: Argument of type '{ runtime: Runtime; theme: IBoardTheme; visualDef: BoardImageDefinition; disableTilt: false; wire...' is not assignable to parameter of type 'MetroBoardProps'.
-  Property 'boardDef' is missing in type '{ runtime: Runtime; theme: IBoardTheme; visualDef: BoardImageDefinition; disableTilt: false; wire...'.
+pxt-maker/libs/stm32bluepill/built/dockercodal
+pxt-maker/libs/blocksprj/built/dockercodal
 ```
 
 ### Updates
