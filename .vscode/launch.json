@@ -8,7 +8,7 @@
             "request": "launch",
             "cwd": "${workspaceRoot}",
 
-            "target": "pxt-maker/projects/blink/built/flash.bin",
+            "target": "pxt-maker/projects/blink/built/dockercodal/build/STM32_BLUE_PILL",
 
             //  Start arm-none-eabi-gdb with the loader.gdb script.  Connects to OpenOCD to send commands to ST-Link USB dongle.
             "gdbpath": "arm-none-eabi-gdb",

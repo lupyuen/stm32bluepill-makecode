@@ -43,11 +43,14 @@ set print asm-demangle on
 # monitor halt
 # monitor sleep 1000
 
+# Rewrite pathnames from /mnt/c/stm32bluepill-makecode/... to ./...
+set substitute-path /mnt/c/stm32bluepill-makecode .
+
 # Specify the target program to be debugged.  Must be specified here (not the command line) because the VSCode debugger will fail without it.
-file pxt-maker/projects/blink/built/flash.bin
+file pxt-maker/projects/blink/built/dockercodal/build/STM32_BLUE_PILL
 
 # Load the program into device memory.
-load
+# load
 
 # Set breakpoint at the main() function.
 break main
