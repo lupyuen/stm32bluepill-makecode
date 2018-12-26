@@ -29,16 +29,16 @@
                 "command": "bash",
                 "args": [
                     "-c",
-                    "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -semihosting -kernel pxt-maker/libs/stm32bluepill/built/dockercodal/build/STM32_BLUE_PILL.bin"
+                    "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -semihosting -kernel pxt-maker/projects/blink/built/flash.bin"
                 ]
             },
             "osx": {
-                "command": "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -semihosting -kernel pxt-maker/libs/stm32bluepill/built/dockercodal/build/STM32_BLUE_PILL.bin"
+                "command": "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -semihosting -kernel pxt-maker/projects/blink/built/flash.bin"
             },
             "linux": {
-                "command": "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -semihosting -kernel pxt-maker/libs/stm32bluepill/built/dockercodal/build/STM32_BLUE_PILL.bin"
+                "command": "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -semihosting -kernel pxt-maker/projects/blink/built/flash.bin"
             },
-            "problemMatcher": {
+            "problemMatcher": {  //  Look for Unity Unit Test errors.
                 // The file name for reported problems is relative to the opened folder.
                 "fileLocation": ["relative", "${workspaceFolder}"],
                 // The actual pattern to match problems in the output.
@@ -69,14 +69,14 @@
                 "command": "bash",
                 "args": [
                     "-c",
-                    "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -s -S -semihosting -kernel pxt-maker/libs/stm32bluepill/built/dockercodal/build/STM32_BLUE_PILL.bin"
+                    "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -s -S -semihosting -kernel pxt-maker/projects/blink/built/flash.bin"
                 ]
             },
             "osx": {
-                "command": "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -s -S -semihosting -kernel pxt-maker/libs/stm32bluepill/built/dockercodal/build/STM32_BLUE_PILL.bin"
+                "command": "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -s -S -semihosting -kernel pxt-maker/projects/blink/built/flash.bin"
             },
             "linux": {
-                "command": "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -s -S -semihosting -kernel pxt-maker/libs/stm32bluepill/built/dockercodal/build/STM32_BLUE_PILL.bin"
+                "command": "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -s -S -semihosting -kernel pxt-maker/projects/blink/built/flash.bin"
             },
             "problemMatcher": [],
             "group": "test",

@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "C:\\codal-libopencm3"
 		}
 	],
 	"settings": {}
