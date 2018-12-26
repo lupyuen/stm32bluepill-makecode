@@ -1,0 +1,54 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "1️⃣ pxt install",
+            "type": "npm",
+            "script": "install",
+            "path": "pxt/",
+            "problemMatcher": []
+        },
+        {
+            "label": "2️⃣ pxt build",
+            "type": "npm",
+            "script": "build",
+            "path": "pxt/",
+            "problemMatcher": []
+        },
+        {
+            "label": "3️⃣ pxt-common-packages install",
+            "type": "npm",
+            "script": "install",
+            "path": "pxt-common-packages/",
+            "problemMatcher": []
+        },
+        {
+            "label": "4️⃣ pxt-maker install",
+            "type": "npm",
+            "script": "install",
+            "path": "pxt-maker/",
+            "problemMatcher": []
+        },
+        {
+            "label": "pxt serve (no browser)",
+            "type": "shell",
+            "command": "pxt serve --localbuild --no-browser",
+            "options": {
+                "cwd": "${workspaceFolder}/pxt-maker"
+            },
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        }
+    ]
+}
