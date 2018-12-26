@@ -76,7 +76,7 @@ pxt serve --localbuild --no-browser
 
 ### Running on Windows Ubuntu Bash
 
-Because Docker is not supported on Windows Ubuntu, we will install a dummy `docker` command to intervene manually during the build. Run these commands inside `pxt-maker`:
+Because Docker is not supported on Windows Ubuntu, we will install a dummy `docker` command that will use the local shell to build instead of using `docker`. Run these commands inside `pxt-maker`:
 
 ```bash
 chmod +x scripts/docker
@@ -84,43 +84,22 @@ sudo cp scripts/docker /usr/local/bin/
 pxt serve --localbuild --no-browser
 ```
 
-The build will pause at the `docker` step like this:
+The `docker` command will build like this:
 ```log
 building libs/base
 building libs/core
 building libs/core---stm32bluepill
 building libs/stm32bluepill
 [run] cd built/dockercodal; docker run --rm -v /mnt/c/maker.makecode.com/pxt-maker/libs/stm32bluepill/built/dockercodal/:/src -w /src -u build pext/yotta:latest python build.py
-***** Paused in dummy docker script. Open another window and enter:
+***** dummy docker script starting sub-build in /mnt/c/stm32bluepill-makecode/pxt-maker/libs/stm32bluepill/built/dockercodal
 cd /mnt/c/stm32bluepill-makecode/pxt-maker/libs/stm32bluepill/built/dockercodal
 export VERBOSE=1
 python build.py
-***** Press Enter to continue build...
-```
-
-Open a new shell and enter the commands shown:
-```bash
-cd /mnt/c/stm32bluepill-makecode/pxt-maker/libs/stm32bluepill/built/dockercodal
-export VERBOSE=1
-python build.py
-```
-
-Eventually the `libs/stm32bluepill` build will succeed...
-```log
-Entering directory `/mnt/c/maker.makecode.com/pxt-maker/libs/stm32bluepill/built/dockercodal/build'
-[ 99%] converting to hex file.
 ...
-[100%] converting to bin file.
-...
-[100%] Built target STM32_BLUE_PILL_hex
-[100%] Built target STM32_BLUE_PILL_bin
+***** dummy docker script finished sub-build
 ```
 
-Return to the `pxt-maker` shell and press Enter.  It will continue the build.
-
-When the build pauses in a different folder like `libs/blocksprj/built/dockercodal`, repeat the above steps to run `python build.py` in the paused folder.
-
-Here are the folders that require manual building:
+Here are the folders that will use the `docker` command for building:
 
 ```
 pxt-maker/libs/stm32bluepill/built/dockercodal
