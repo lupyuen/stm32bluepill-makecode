@@ -4,6 +4,88 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "🔗 Connect To STM32 Blue Pill",
+            "type": "shell",
+            "windows": {
+                "command": "c:\\openocd\\bin\\openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f scripts/connect.ocd"
+            },
+            "osx": {
+                "command": "openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f scripts/connect.ocd"
+            },
+            "linux": {
+                "command": "openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f scripts/connect.ocd"
+            },
+            "problemMatcher": [],
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "🔗 Emulate STM32 Blue Pill",
+            "type": "shell",
+            "windows": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -semihosting -kernel pxt-maker/libs/stm32bluepill/built/dockercodal/build/STM32_BLUE_PILL.bin"
+                ]
+            },
+            "osx": {
+                "command": "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -semihosting -kernel pxt-maker/libs/stm32bluepill/built/dockercodal/build/STM32_BLUE_PILL.bin"
+            },
+            "linux": {
+                "command": "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -semihosting -kernel pxt-maker/libs/stm32bluepill/built/dockercodal/build/STM32_BLUE_PILL.bin"
+            },
+            "problemMatcher": {
+                // The file name for reported problems is relative to the opened folder.
+                "fileLocation": ["relative", "${workspaceFolder}"],
+                // The actual pattern to match problems in the output.
+                "pattern": {
+                    // The regular expression e.g. src\../lib/nano-float/test/test.c:36:test_sqrt:FAIL: Expected 1.414214 Was 1.41421354
+                    "regexp": "^(.*):(\\d+):([^:]+):(FAIL):\\s+(.*)$",
+                    // The first match group matches the file name which is relative.
+                    "file": 1,
+                    // The second match group matches the line on which the problem occurred.
+                    "line": 2,
+                    "code": 3,
+                    // The fourth match group matches the problem's severity. Can be ignored. Then all problems are captured as errors.
+                    "severity": 4,
+                    // The fifth match group matches the message.
+                    "message": 5
+                }
+            },
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "🐛 Emulate STM32 Blue Pill (Debug)",
+            "type": "shell",
+            "windows": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -s -S -semihosting -kernel pxt-maker/libs/stm32bluepill/built/dockercodal/build/STM32_BLUE_PILL.bin"
+                ]
+            },
+            "osx": {
+                "command": "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -s -S -semihosting -kernel pxt-maker/libs/stm32bluepill/built/dockercodal/build/STM32_BLUE_PILL.bin"
+            },
+            "linux": {
+                "command": "../qemu_stm32/arm-softmmu/qemu-system-arm -M stm32-f103c8 -s -S -semihosting -kernel pxt-maker/libs/stm32bluepill/built/dockercodal/build/STM32_BLUE_PILL.bin"
+            },
+            "problemMatcher": [],
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
             "label": "1️⃣ pxt install",
             "type": "npm",
             "script": "install",
