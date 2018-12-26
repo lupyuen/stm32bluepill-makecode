@@ -1,0 +1,9 @@
+[submodule "pxt"]
+	path = pxt
+	url = https://github.com/lupyuen/pxt
+[submodule "pxt-common-packages"]
+	path = pxt-common-packages
+	url = https://github.com/lupyuen/pxt-common-packages
+[submodule "pxt-maker"]
+	path = pxt-maker
+	url = https://github.com/lupyuen/pxt-maker
