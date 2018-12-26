@@ -25,7 +25,7 @@ This is an experimental code editor for STM32 Blue Pill - try it at https://lupy
 
 1. Install the dependencies of ``pxt`` and build it
 
-       cd pix
+       cd pxt
        npm install
        npm run build
        cd ..
