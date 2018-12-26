@@ -46,17 +46,17 @@ set print asm-demangle on
 # Rewrite pathnames from /mnt/c/stm32bluepill-makecode/... to ./...
 set substitute-path /mnt/c/stm32bluepill-makecode .
 
-# Specify the target program to be debugged.  Must be specified here (not the command line) because the VSCode debugger will fail without it.
-# file pxt-maker/projects/blink/built/dockercodal/build/STM32_BLUE_PILL
+# Specify the target program to be debugged.  Must be specified here (not the command line) otherwise the break command below will not work.
+file pxt-maker/projects/blink/built/dockercodal/build/STM32_BLUE_PILL
 
-# Load the program into device memory.
+# Load the above program into device memory.  Note: This will overwrite the memory used by the program specified at command line.
 # load
 
 # Set breakpoint at the main() function.
-# break main
+break main
 
 # Run the program and stop at the main() function.
-# continue
+continue
 
 # Remove the breakpoint at the main() function.
 # clear stm32_blue_pill_rust::main
