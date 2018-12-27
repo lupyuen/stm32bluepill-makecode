@@ -116,9 +116,21 @@
         {
             "label": "5️⃣ pxt-maker link",
             "type": "shell",
-            "command": "scripts/install-pxt.sh",
             "options": {
                 "cwd": "${workspaceFolder}/pxt-maker"
+            },
+            "windows": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "scripts/install-pxt.sh"
+                ]
+            },
+            "osx": {
+                "command": "scripts/install-pxt.sh",
+            },
+            "linux": {
+                "command": "scripts/install-pxt.sh",
             },
             "problemMatcher": [
             ],
@@ -127,9 +139,21 @@
         {
             "label": "6️⃣ pxt serve (no browser)",
             "type": "shell",
-            "command": "pxt serve --localbuild --no-browser",
             "options": {
                 "cwd": "${workspaceFolder}/pxt-maker"
+            },
+            "windows": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "pxt serve --localbuild --no-browser"
+                ]
+            },
+            "osx": {
+                "command": "pxt serve --localbuild --no-browser"
+            },
+            "linux": {
+                "command": "pxt serve --localbuild --no-browser"
             },
             "problemMatcher": [
                 "$tsc"
@@ -146,9 +170,21 @@
         {
             "label": "7️⃣ pxt build demo (blink)",
             "type": "shell",
-            "command": "./build.sh",
             "options": {
                 "cwd": "${workspaceFolder}/pxt-maker/projects/blink"
+            },
+            "windows": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "./build.sh"
+                ]
+            },
+            "osx": {
+                "command": "./build.sh",
+            },
+            "linux": {
+                "command": "./build.sh",
             },
             "problemMatcher": [
                 "$tsc"
