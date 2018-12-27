@@ -194,6 +194,59 @@
                 "reveal": "always",
                 "panel": "dedicated"
             }
+        },
+        {
+            "label": "pxt clean",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/pxt-maker"
+            },
+            "windows": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "find . -name codal-libopencm3 ; echo Done"
+                ]
+            },
+            "osx": {
+                "command": "find . -name codal-libopencm3 ; echo Done"
+            },
+            "linux": {
+                "command": "find . -name codal-libopencm3 ; echo Done"
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "pxt clean codal-libopencm3",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/pxt-maker"
+            },
+            "windows": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "find . -name codal-libopencm3 ; find . -name codal-libopencm3 ; echo Done"
+                ]
+            },
+            "osx": {
+                "command": "find . -name codal-libopencm3 ; find . -name codal-libopencm3 ; echo Done"
+            },
+            "linux": {
+                "command": "find . -name codal-libopencm3 ; find . -name codal-libopencm3 ; echo Done"
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
         }
+
     ]
 }
