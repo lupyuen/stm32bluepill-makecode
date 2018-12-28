@@ -205,14 +205,16 @@
                 "command": "bash",
                 "args": [
                     "-c",
-                    "find . -name codal-libopencm3 ; echo Done"
+                    "rm -rf libs/stm32bluepill/built ; rm -rf libs/blocksprj/built ; rm -rf projects/blink/built ; echo Done"
                 ]
             },
             "osx": {
-                "command": "find . -name codal-libopencm3 ; echo Done"
+                "command": 
+                "rm -rf libs/stm32bluepill/built ; rm -rf libs/blocksprj/built ; rm -rf projects/blink/built ; echo Done"
             },
             "linux": {
-                "command": "find . -name codal-libopencm3 ; echo Done"
+                "command": 
+                "rm -rf libs/stm32bluepill/built ; rm -rf libs/blocksprj/built ; rm -rf projects/blink/built ; echo Done"
             },
             "problemMatcher": [],
             "group": "build",
@@ -235,10 +237,12 @@
                 ]
             },
             "osx": {
-                "command": "find . -name codal-libopencm3 ; find . -name codal-libopencm3 ; echo Done"
+                "command": 
+                "find . -name codal-libopencm3 ; find . -name codal-libopencm3 ; echo Done"
             },
             "linux": {
-                "command": "find . -name codal-libopencm3 ; find . -name codal-libopencm3 ; echo Done"
+                "command": 
+                "find . -name codal-libopencm3 ; find . -name codal-libopencm3 ; echo Done"
             },
             "problemMatcher": [],
             "group": "build",

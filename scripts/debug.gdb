@@ -45,6 +45,7 @@ set print asm-demangle on
 
 # Rewrite pathnames from /mnt/c/stm32bluepill-makecode/... to ./...
 set substitute-path /mnt/c/stm32bluepill-makecode .
+set substitute-path /src/libraries ./pxt-maker/projects/blink/built/dockercodal/libraries
 
 # Specify the target program to be debugged.  Must be specified here (not the command line) otherwise the break command below will not work.
 file pxt-maker/projects/blink/built/dockercodal/build/STM32_BLUE_PILL
@@ -53,10 +54,10 @@ file pxt-maker/projects/blink/built/dockercodal/build/STM32_BLUE_PILL
 # load
 
 # Set breakpoint at the main() function.
-break main
+# break main
 
 # Run the program and stop at the main() function.
-continue
+# continue
 
 # Remove the breakpoint at the main() function.
 # clear stm32_blue_pill_rust::main
