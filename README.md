@@ -118,6 +118,12 @@ cd ../..
 
 This creates a ROM file `projects/blink/built/flash.bin` that contains the ROM image of the Blink executable.  You may flash the Blue Pill to run it, or run it with the `qemu_stm32` emulator.
 
+The ELF file (before linking with the Blink code) is located in `pxt-maker/projects/blink/built/dockercodal/build/STM32_BLUE_PILL`. To dump the contents of the file:
+
+```
+arm-none-eabi-objdump -t -S projects/blink/built/dockercodal/build/STM32_BLUE_PILL >STM32_BLUE_PILL.dump
+```
+
 ### Updates
 
 Make sure to pull changes from all repos regularly. More instructions are at https://github.com/Microsoft/pxt#running-a-target-from-localhost

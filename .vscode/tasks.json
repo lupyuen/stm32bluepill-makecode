@@ -87,31 +87,107 @@
         },
         {
             "label": "1️⃣ pxt install",
-            "type": "npm",
-            "script": "install",
-            "path": "pxt/",
-            "problemMatcher": []
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/pxt"
+            },
+            "windows": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "npm install"
+                ]
+            },
+            "osx": {
+                "command": 
+                "npm install"
+            },
+            "linux": {
+                "command": 
+                "npm install"
+            },
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "group": "build"
         },
         {
             "label": "2️⃣ pxt build",
-            "type": "npm",
-            "script": "build",
-            "path": "pxt/",
-            "problemMatcher": []
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/pxt"
+            },
+            "windows": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "npm build"
+                ]
+            },
+            "osx": {
+                "command": 
+                "npm build"
+            },
+            "linux": {
+                "command": 
+                "npm build"
+            },
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "group": "build"
         },
         {
             "label": "3️⃣ pxt-common-packages install",
-            "type": "npm",
-            "script": "install",
-            "path": "pxt-common-packages/",
-            "problemMatcher": []
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/pxt-common-packages"
+            },
+            "windows": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "npm install"
+                ]
+            },
+            "osx": {
+                "command": 
+                "npm install"
+            },
+            "linux": {
+                "command": 
+                "npm install"
+            },
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "group": "build"
         },
         {
             "label": "4️⃣ pxt-maker install",
-            "type": "npm",
-            "script": "install",
-            "path": "pxt-maker/",
-            "problemMatcher": []
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/pxt-maker"
+            },
+            "windows": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "npm install"
+                ]
+            },
+            "osx": {
+                "command": 
+                "npm install"
+            },
+            "linux": {
+                "command": 
+                "npm install"
+            },
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "group": "build"
         },
         {
             "label": "5️⃣ pxt-maker link",
@@ -123,16 +199,19 @@
                 "command": "bash",
                 "args": [
                     "-c",
-                    "scripts/install-pxt.sh"
+                    "npm install -g pxt ; npm link ../pxt ; npm link ../pxt-common-packages"
                 ]
             },
             "osx": {
-                "command": "scripts/install-pxt.sh",
+                "command": 
+                "npm install -g pxt ; npm link ../pxt ; npm link ../pxt-common-packages"
             },
             "linux": {
-                "command": "scripts/install-pxt.sh",
+                "command": 
+                "npm install -g pxt ; npm link ../pxt ; npm link ../pxt-common-packages"
             },
             "problemMatcher": [
+                "$tsc"
             ],
             "group": "build"
         },
@@ -146,14 +225,16 @@
                 "command": "bash",
                 "args": [
                     "-c",
-                    "pxt serve --localbuild --no-browser"
+                    "source ~/.profile ; pxt serve --localbuild --no-browser"
                 ]
             },
             "osx": {
-                "command": "pxt serve --localbuild --no-browser"
+                "command": 
+                "pxt serve --localbuild --no-browser"
             },
             "linux": {
-                "command": "pxt serve --localbuild --no-browser"
+                "command": 
+                "pxt serve --localbuild --no-browser"
             },
             "problemMatcher": [
                 "$tsc"
@@ -177,7 +258,7 @@
                 "command": "bash",
                 "args": [
                     "-c",
-                    "./build.sh"
+                    "source ~/.profile ; ./build.sh"
                 ]
             },
             "osx": {
