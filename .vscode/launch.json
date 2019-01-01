@@ -14,7 +14,7 @@
             "gdbpath": "arm-none-eabi-gdb",
             "debugger_args": [
                 "-x",
-                "scripts/debug.gdb"
+                "pxt-maker/scripts/debug.gdb"
             ],
 
             //  For debugger display, don't interpret values returned by gdb.
