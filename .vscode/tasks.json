@@ -4,16 +4,35 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "📲 Flash STM32 Blue Pill",
+            "type": "shell",
+            "windows": {
+                "command": "c:\\openocd\\bin\\openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/flash.ocd"
+            },
+            "osx": {
+                "command": "openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/flash.ocd"
+            },
+            "linux": {
+                "command": "openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/flash.ocd"
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
             "label": "🔗 Connect To STM32 Blue Pill",
             "type": "shell",
             "windows": {
-                "command": "c:\\openocd\\bin\\openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f scripts/connect.ocd"
+                "command": "c:\\openocd\\bin\\openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/connect.ocd"
             },
             "osx": {
-                "command": "openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f scripts/connect.ocd"
+                "command": "openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/connect.ocd"
             },
             "linux": {
-                "command": "openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f scripts/connect.ocd"
+                "command": "openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/connect.ocd"
             },
             "problemMatcher": [],
             "group": "test",
@@ -86,7 +105,7 @@
             }
         },
         {
-            "label": "1️⃣ pxt install",
+            "label": "1️⃣  pxt install",
             "type": "shell",
             "options": {
                 "cwd": "${workspaceFolder}/pxt"
@@ -112,7 +131,7 @@
             "group": "build"
         },
         {
-            "label": "2️⃣ pxt build",
+            "label": "2️⃣  pxt build",
             "type": "shell",
             "options": {
                 "cwd": "${workspaceFolder}/pxt"
@@ -138,7 +157,7 @@
             "group": "build"
         },
         {
-            "label": "3️⃣ pxt-common-packages install",
+            "label": "3️⃣  pxt-common-packages install",
             "type": "shell",
             "options": {
                 "cwd": "${workspaceFolder}/pxt-common-packages"
@@ -164,7 +183,7 @@
             "group": "build"
         },
         {
-            "label": "4️⃣ pxt-maker install",
+            "label": "4️⃣  pxt-maker install",
             "type": "shell",
             "options": {
                 "cwd": "${workspaceFolder}/pxt-maker"
@@ -190,7 +209,7 @@
             "group": "build"
         },
         {
-            "label": "5️⃣ pxt-maker link",
+            "label": "5️⃣  pxt-maker link",
             "type": "shell",
             "options": {
                 "cwd": "${workspaceFolder}/pxt-maker"
@@ -216,7 +235,7 @@
             "group": "build"
         },
         {
-            "label": "6️⃣ pxt serve (no browser)",
+            "label": "6️⃣  pxt serve (no browser)",
             "type": "shell",
             "options": {
                 "cwd": "${workspaceFolder}/pxt-maker"
@@ -237,7 +256,7 @@
                 "pxt serve --localbuild --no-browser"
             },
             "problemMatcher": [
-                "$tsc"
+                "$tsc", "$gcc"
             ],
             "group": {
                 "kind": "build",
@@ -249,7 +268,7 @@
             }
         },
         {
-            "label": "7️⃣ pxt build demo (blink)",
+            "label": "7️⃣  pxt build demo (blink)",
             "type": "shell",
             "options": {
                 "cwd": "${workspaceFolder}/pxt-maker/projects/blink"
@@ -268,7 +287,37 @@
                 "command": "./build.sh",
             },
             "problemMatcher": [
-                "$tsc"
+                "$gcc"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "8️⃣  pxt rebuild demo (blink)",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/pxt-maker/projects/blink/built/dockercodal"
+            },
+            "windows": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "source ~/.profile ; rm -r build ; python build.py ; cd ../.. ; ./build.sh "
+                ]
+            },
+            "osx": {
+                "command": 
+                " rm -r build ; python build.py ; cd ../.. ; ./build.sh ",
+            },
+            "linux": {
+                "command": 
+                " rm -r build ; python build.py ; cd ../.. ; ./build.sh ",
+            },
+            "problemMatcher": [
+                "$gcc"
             ],
             "group": "build",
             "presentation": {
