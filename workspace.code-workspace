@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "C:\\codal-libopencm3"
+		},
+		{
+			"path": "/Users/Luppy/codal-libopencm3"
 		}
 	],
 	"settings": {
