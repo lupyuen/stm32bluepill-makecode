@@ -7,13 +7,16 @@
             "label": "📲 Flash STM32 Blue Pill",
             "type": "shell",
             "windows": {
-                "command": "c:\\openocd\\bin\\openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/flash.ocd"
+                "command": 
+                "c:\\openocd\\bin\\openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/flash.ocd"
             },
             "osx": {
-                "command": "openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/flash.ocd"
+                "command": 
+                " pkill openocd ; openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/flash.ocd "
             },
             "linux": {
-                "command": "openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/flash.ocd"
+                "command": 
+                " pkill openocd ; openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/flash.ocd "
             },
             "problemMatcher": [],
             "group": "build",
@@ -26,13 +29,16 @@
             "label": "🔗 Connect To STM32 Blue Pill",
             "type": "shell",
             "windows": {
-                "command": "c:\\openocd\\bin\\openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/connect.ocd"
+                "command": 
+                "c:\\openocd\\bin\\openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/connect.ocd "
             },
             "osx": {
-                "command": "openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/connect.ocd"
+                "command": 
+                " pkill openocd ; openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/connect.ocd "
             },
             "linux": {
-                "command": "openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/connect.ocd"
+                "command": 
+                " pkill openocd ; openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -f pxt-maker/scripts/connect.ocd "
             },
             "problemMatcher": [],
             "group": "test",
