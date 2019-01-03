@@ -311,7 +311,7 @@
                 "command": "bash",
                 "args": [
                     "-c",
-                    "source ~/.profile ; rm -r build ; python build.py ; cd ../.. ; ./build.sh "
+                    " source ~/.profile ; rm -r build ; python build.py ; cd ../.. ; ./build.sh "
                 ]
             },
             "osx": {
@@ -360,7 +360,7 @@
             }
         },
         {
-            "label": "pxt clean codal-libopencm3",
+            "label": "pxt rebuild",
             "type": "shell",
             "options": {
                 "cwd": "${workspaceFolder}/pxt-maker"
@@ -369,16 +369,16 @@
                 "command": "bash",
                 "args": [
                     "-c",
-                    "find . -name codal-libopencm3 ; find . -name codal-libopencm3 ; echo Done"
+                    " source ~/.profile ; scripts/rebuild.sh "
                 ]
             },
             "osx": {
                 "command": 
-                "find . -name codal-libopencm3 ; find . -name codal-libopencm3 ; echo Done"
+                " scripts/rebuild.sh "
             },
             "linux": {
                 "command": 
-                "find . -name codal-libopencm3 ; find . -name codal-libopencm3 ; echo Done"
+                " scripts/rebuild.sh "
             },
             "problemMatcher": [],
             "group": "build",
