@@ -360,7 +360,7 @@
             }
         },
         {
-            "label": "pxt rebuild",
+            "label": "9️⃣  pxt rebuild",
             "type": "shell",
             "options": {
                 "cwd": "${workspaceFolder}/pxt-maker"
@@ -380,7 +380,7 @@
                 "command": 
                 " scripts/rebuild.sh "
             },
-            "problemMatcher": [],
+            "problemMatcher": [ "$gcc", "$tsc" ],
             "group": "build",
             "presentation": {
                 "reveal": "always",
