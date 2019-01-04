@@ -332,7 +332,7 @@
             }
         },
         {
-            "label": "pxt clean",
+            "label": "pxt clean and serve",
             "type": "shell",
             "options": {
                 "cwd": "${workspaceFolder}/pxt-maker"
@@ -341,16 +341,16 @@
                 "command": "bash",
                 "args": [
                     "-c",
-                    "rm -rf libs/stm32bluepill/built ; rm -rf libs/blocksprj/built ; rm -rf projects/blink/built ; echo Done"
+                    " pxt clean && ./scripts/serve.sh && pxt staticpkg && pxt serve -pkg "
                 ]
             },
             "osx": {
                 "command": 
-                "rm -rf libs/stm32bluepill/built ; rm -rf libs/blocksprj/built ; rm -rf projects/blink/built ; echo Done"
+                " pxt clean && ./scripts/serve.sh && pxt staticpkg && pxt serve -pkg "
             },
             "linux": {
                 "command": 
-                "rm -rf libs/stm32bluepill/built ; rm -rf libs/blocksprj/built ; rm -rf projects/blink/built ; echo Done"
+                " pxt clean && ./scripts/serve.sh && pxt staticpkg && pxt serve -pkg "
             },
             "problemMatcher": [],
             "group": "build",
