@@ -224,16 +224,16 @@
                 "command": "bash",
                 "args": [
                     "-c",
-                    "npm install -g pxt ; npm link ../pxt ; npm link ../pxt-common-packages"
+                    " npm install -g pxt && npm link ../pxt && npm link ../pxt-common-packages && npm install keytar "
                 ]
             },
             "osx": {
                 "command": 
-                "npm install -g pxt ; npm link ../pxt ; npm link ../pxt-common-packages"
+                " npm install -g pxt && npm link ../pxt && npm link ../pxt-common-packages && npm install keytar "
             },
             "linux": {
                 "command": 
-                "npm install -g pxt ; npm link ../pxt ; npm link ../pxt-common-packages"
+                " npm install -g pxt && npm link ../pxt && npm link ../pxt-common-packages && npm install keytar "
             },
             "problemMatcher": [
                 "$tsc"
@@ -250,16 +250,16 @@
                 "command": "bash",
                 "args": [
                     "-c",
-                    "source ~/.profile ; pxt serve --localbuild --no-browser"
+                    " source ~/.profile ; export PXT_DEBUG=1 ; export PXT_FORCE_LOCAL=1 ; export PXT_NODOCKER=1 ; export PXT_RUNTIME_DEV= ; export PXT_ASMDEBUG=1 ; pxt serve --localbuild --no-browser "
                 ]
             },
             "osx": {
                 "command": 
-                "pxt serve --localbuild --no-browser"
+                " export PXT_DEBUG=1 ; export PXT_FORCE_LOCAL=1 ; export PXT_NODOCKER=1 ; export PXT_RUNTIME_DEV= ; export PXT_ASMDEBUG=1 ; pxt serve --localbuild --no-browser "
             },
             "linux": {
                 "command": 
-                "pxt serve --localbuild --no-browser"
+                " export PXT_DEBUG=1 ; export PXT_FORCE_LOCAL=1 ; export PXT_NODOCKER=1 ; export PXT_RUNTIME_DEV= ; export PXT_ASMDEBUG=1 ; pxt serve --localbuild --no-browser "
             },
             "problemMatcher": [
                 "$tsc", "$gcc"
