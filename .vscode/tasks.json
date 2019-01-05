@@ -360,6 +360,34 @@
             }
         },
         {
+            "label": "pxt serve (packaged)",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/pxt-maker"
+            },
+            "windows": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    " export PXT_FORCE_LOCAL=1 ; export PXT_NODOCKER=1 ; export PXT_RUNTIME_DEV= ; export PXT_ASMDEBUG=1 ; pxt serve -pkg "
+                ]
+            },
+            "osx": {
+                "command": 
+                " export PXT_FORCE_LOCAL=1 ; export PXT_NODOCKER=1 ; export PXT_RUNTIME_DEV= ; export PXT_ASMDEBUG=1 ; pxt serve -pkg "
+            },
+            "linux": {
+                "command": 
+                " export PXT_FORCE_LOCAL=1 ; export PXT_NODOCKER=1 ; export PXT_RUNTIME_DEV= ; export PXT_ASMDEBUG=1 ; pxt serve -pkg "
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
             "label": "9️⃣  pxt rebuild",
             "type": "shell",
             "options": {
