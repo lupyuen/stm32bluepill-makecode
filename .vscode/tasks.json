@@ -146,16 +146,16 @@
                 "command": "bash",
                 "args": [
                     "-c",
-                    "npm build"
+                    " npm run build "
                 ]
             },
             "osx": {
                 "command": 
-                "npm build"
+                " npm run build "
             },
             "linux": {
                 "command": 
-                "npm build"
+                " npm run build "
             },
             "problemMatcher": [
                 "$tsc"
