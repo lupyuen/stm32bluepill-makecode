@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "/Users/Luppy/visualbluepill.github.io"
+		},
+		{
+			"path": "pxt-maker/logs"
 		}
 	],
 	"settings": {
