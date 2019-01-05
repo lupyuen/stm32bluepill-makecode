@@ -341,16 +341,16 @@
                 "command": "bash",
                 "args": [
                     "-c",
-                    " pxt clean && ./scripts/serve.sh && pxt staticpkg && pxt serve -pkg "
+                    " export PXT_FORCE_LOCAL=1 ; export PXT_NODOCKER=1 ; export PXT_RUNTIME_DEV= ; export PXT_ASMDEBUG=1 ; pxt clean && ./scripts/serve.sh && pxt staticpkg && pxt serve -pkg "
                 ]
             },
             "osx": {
                 "command": 
-                " pxt clean && ./scripts/serve.sh && pxt staticpkg && pxt serve -pkg "
+                " export PXT_FORCE_LOCAL=1 ; export PXT_NODOCKER=1 ; export PXT_RUNTIME_DEV= ; export PXT_ASMDEBUG=1 ; pxt clean && ./scripts/serve.sh && pxt staticpkg && pxt serve -pkg "
             },
             "linux": {
                 "command": 
-                " pxt clean && ./scripts/serve.sh && pxt staticpkg && pxt serve -pkg "
+                " export PXT_FORCE_LOCAL=1 ; export PXT_NODOCKER=1 ; export PXT_RUNTIME_DEV= ; export PXT_ASMDEBUG=1 ; pxt clean && ./scripts/serve.sh && pxt staticpkg && pxt serve -pkg "
             },
             "problemMatcher": [],
             "group": "build",
