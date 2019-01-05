@@ -8,6 +8,12 @@
 		},
 		{
 			"path": "/Users/Luppy/codal-libopencm3"
+		},
+		{
+			"path": "pxt-maker"
+		},
+		{
+			"path": "pxt-maker/logs"
 		}
 	],
 	"settings": {
