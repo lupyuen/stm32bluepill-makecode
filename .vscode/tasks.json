@@ -362,7 +362,7 @@
             }
         },
         {
-            "label": "pxt serve (packaged)",
+            "label": "pxt package and serve",
             "type": "shell",
             "options": {
                 "cwd": "${workspaceFolder}/pxt-maker"
@@ -371,16 +371,16 @@
                 "command": "bash",
                 "args": [
                     "-c",
-                    " set -e -x ; export PXT_FORCE_LOCAL=1 ; export PXT_NODOCKER=1 ; export PXT_RUNTIME_DEV= ; export PXT_ASMDEBUG=1 ; pxt serve -pkg "
+                    " set -e -x ; export PXT_FORCE_LOCAL=1 ; export PXT_NODOCKER=1 ; export PXT_RUNTIME_DEV= ; export PXT_ASMDEBUG=1 ; pxt staticpkg && pxt serve -pkg "
                 ]
             },
             "osx": {
                 "command": 
-                " set -e -x ; export PXT_FORCE_LOCAL=1 ; export PXT_NODOCKER=1 ; export PXT_RUNTIME_DEV= ; export PXT_ASMDEBUG=1 ; pxt serve -pkg "
+                " set -e -x ; export PXT_FORCE_LOCAL=1 ; export PXT_NODOCKER=1 ; export PXT_RUNTIME_DEV= ; export PXT_ASMDEBUG=1 ; pxt staticpkg && pxt serve -pkg "
             },
             "linux": {
                 "command": 
-                " set -e -x ; export PXT_FORCE_LOCAL=1 ; export PXT_NODOCKER=1 ; export PXT_RUNTIME_DEV= ; export PXT_ASMDEBUG=1 ; pxt serve -pkg "
+                " set -e -x ; export PXT_FORCE_LOCAL=1 ; export PXT_NODOCKER=1 ; export PXT_RUNTIME_DEV= ; export PXT_ASMDEBUG=1 ; pxt staticpkg && pxt serve -pkg "
             },
             "problemMatcher": [],
             "group": "build",
