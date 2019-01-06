@@ -74,37 +74,23 @@ While fixing the build you may suppress the browser like this:
 pxt serve --localbuild --no-browser
 ```
 
-### Running on Windows Ubuntu Bash
-
-Because Docker is not supported on Windows Ubuntu, we will install a dummy `docker` command that will use the local shell to build instead of using `docker`. Run these commands inside `pxt-maker`:
-
-```bash
-chmod +x scripts/docker
-sudo cp scripts/docker /usr/local/bin/
-pxt serve --localbuild --no-browser
-```
-
-The `docker` command will build like this:
-```log
-building libs/base
-building libs/core
-building libs/core---stm32bluepill
-building libs/stm32bluepill
-[run] cd built/dockercodal; docker run --rm -v /mnt/c/maker.makecode.com/pxt-maker/libs/stm32bluepill/built/dockercodal/:/src -w /src -u build pext/yotta:latest python build.py
-***** dummy docker script starting sub-build in /mnt/c/stm32bluepill-makecode/pxt-maker/libs/stm32bluepill/built/dockercodal
-cd /mnt/c/stm32bluepill-makecode/pxt-maker/libs/stm32bluepill/built/dockercodal
-export VERBOSE=1
-python build.py
-...
-***** dummy docker script finished sub-build
-```
-
-Here are the folders that will use the `docker` command for building:
+Because Docker is not supported on Windows Ubuntu, and the build runs on faster on macOS without Docker, set the following environment variables to disable Docker:
 
 ```
-pxt-maker/libs/stm32bluepill/built/dockercodal
-pxt-maker/libs/blocksprj/built/dockercodal
+export PXT_DEBUG=1          # - display extensive logging info
+export PXT_FORCE_LOCAL=1    # - compile C++ on the local machine, not the cloud service
+export PXT_NODOCKER=1       # - don't use Docker image, and instead use host's arm-none-eabi-gcc (doesn't apply to Linux targets)
+export PXT_RUNTIME_DEV=     # - DISABLED: always rebuild the C++ runtime, allowing for modification in the lower level runtime if any
+export PXT_ASMDEBUG=1       # - embed additional information in generated binary.asm file
 ```
+
+You may find these build and debugging scripts useful:
+
+https://github.com/lupyuen/pxt-maker/tree/master/scripts
+
+The build scripts are also accessible as Visual Studio Code tasks when you open the workspace files `stm32bluepill-makecode/build.code-workspace` (for faster builds, with Intellisense disabled) or `stm32bluepill-makecode/workspace.code-workspace` (for easier coding, with Intllisense enabled):
+
+https://github.com/lupyuen/stm32bluepill-makecode/blob/master/.vscode/tasks.json
 
 ### Building the Blink sample
 
@@ -118,10 +104,10 @@ cd ../..
 
 This creates a ROM file `projects/blink/built/flash.bin` that contains the ROM image of the Blink executable.  You may flash the Blue Pill to run it, or run it with the `qemu_stm32` emulator.
 
-The ELF file (before linking with the Blink code) is located in `pxt-maker/projects/blink/built/dockercodal/build/STM32_BLUE_PILL`. To dump the contents of the file:
+The ELF file (before linking with the Blink code) is located in `pxt-maker/projects/blink/built/codal/build/STM32_BLUE_PILL`. To dump the contents of the file:
 
 ```
-arm-none-eabi-objdump -t -S projects/blink/built/dockercodal/build/STM32_BLUE_PILL >STM32_BLUE_PILL.dump
+arm-none-eabi-objdump -t -S projects/blink/built/codal/build/STM32_BLUE_PILL >STM32_BLUE_PILL.dump
 ```
 
 ### Updates
